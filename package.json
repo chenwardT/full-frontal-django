@@ -1,0 +1,36 @@
+{
+  "name": "full_frontal_django",
+  "version": "1.0.0",
+  "description": "Integrate react and front end tooling with Django",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenwardT/full-frontal-django.git"
+  },
+  "keywords": [
+    "django",
+    "react",
+    "webpack",
+    "babel"
+  ],
+  "author": "Edward T. Chen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chenwardT/full-frontal-django/issues"
+  },
+  "homepage": "https://github.com/chenwardT/full-frontal-django#readme",
+  "devDependencies": {
+    "babel": "^6.3.13",
+    "babel-core": "^6.3.21",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3",
+    "webpack": "^1.12.9",
+    "webpack-bundle-tracker": "0.0.8"
+  }
+}

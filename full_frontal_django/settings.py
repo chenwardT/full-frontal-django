@@ -16,7 +16,6 @@ from secrets import DJANGO_SECRET_KEY, POSTGRES_PASSWORD, POSTGRES_USER
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
@@ -42,6 +41,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'django_extensions',
     'bucketlist',
+    'webpack_loader',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -130,3 +130,16 @@ STATIC_URL = '/static/'
 
 RUNSERVERPLUS_SERVER_ADDRESS_PORT = '0.0.0.0:8001'
 INTERNAL_IPS = ['192.168.1.4']
+
+STATICFILES_DIRS = [
+    # We do this so that django's collectstatic copies our bundles to
+    # the STATIC_ROOT or syncs them to whatever storage we use.
+    os.path.join(BASE_DIR, 'assets'),
+]
+
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'BUNDLE_DIR_NAME': 'bundles/',
+        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
+    }
+}
