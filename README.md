@@ -65,5 +65,5 @@ The webpack dev server will watch for changes to JS sources, re-compile the bund
 from memory__ (you will not see a bundle file updating in assets/bundles!), and display changes
 in the browser w/o requiring a page reload (so long as your changes are not in the entry point).
 
-`server.js` uses the webpack-dev-server API to create an instance of the server and relevant settings
-to it from `webpack.config.js`.
+`server.js` uses the webpack-dev-server API to create an instance of the server and pass relevant 
+settings to it from `webpack.config.js`.
