@@ -2,7 +2,7 @@ var path = require("path");
 var webpack = require('webpack');
 var BundleTracker = require('webpack-bundle-tracker');
 
-const INTERFACE = '192.168.1.5';
+const INTERFACE = 'localhost';
 
 module.exports = {
   context: __dirname,

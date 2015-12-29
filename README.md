@@ -1,8 +1,18 @@
-# Full Frontal Django
+# Full Frontal Django :ok_woman:
 
-A demonstration project integrating Django, Webpack (with HMR) and Babel, with support for React/JSX.
+A demonstration project integrating Django, Gulp, Browsersync, Webpack (with HMR) and Babel, 
+with support for React/JSX.
 
 ## Install
+
+_We are using virtualenvwrapper - if you'd rather not use virtualenvwrapper, you must adapt the syntax
+used to activate your virtualenv accordingly in the gulpfile; see the `django-server` task._
+
+Create a virtualenv:
+
+```
+mkvirtualenv ffd-dev
+```
 
 Install Python packages:
 
@@ -30,24 +40,23 @@ the relevant definitions. See `settings.py` for uses.
 
 ## Usage
 
-The `django-extensions` package is used, so start the Django dev server with:
+Run the default gulp task:
+
+```
+gulp
+```
+
+This starts a webpack-dev-server, the Django server, and sets up Browsersync to reload content
+when changes are detected in CSS and HTML directories. See the gulpfile for exact paths.
+
+You should now see changes to your sources reflected in your browser! :tada:
  
- ```
- python manage.py runserver_plus
- ```
- 
- Start the webpack dev server with:
- 
- ```
- node server.js
- ```
- 
- _Note: The webpack dev server is configured to listen on the interface specified by `INTERFACE` in 
- webpack.config.js._
+ _Note:_ The webpack dev server is configured to listen on the interface specified by `INTERFACE` in 
+ webpack.config.js. This is set to localhost by default.
  
 ## Description
 
-Webpack is kept decoupled from Django's staticfiles system via the following:
+Webpack is kept decoupled from Django's _staticfiles_ system via the following:
 
 * `webpack-bundle-tracker` extracts information from webpack
 
@@ -63,7 +72,4 @@ NPM manages the front end dependencies which are described by `package.json`.
 
 The webpack dev server will watch for changes to JS sources, re-compile the bundle, __serve it 
 from memory__ (you will not see a bundle file updating in assets/bundles!), and display changes
-in the browser w/o requiring a page reload (so long as your changes are not in the entry point).
-
-`server.js` uses the webpack-dev-server API to create an instance of the server and pass relevant 
-settings to it from `webpack.config.js`.
+in the browser w/o requiring a page reload (__so long as your changes are not in the entry point__).
