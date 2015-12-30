@@ -1,0 +1,8 @@
+{% extends "base/base.html" %}
+{% block content %}
+    <ul>
+    {% for bucketlist in bucketlists %}
+        <li><a href="/bucketlists/{{ bucketlist.id }}/">{{ bucketlist.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}
