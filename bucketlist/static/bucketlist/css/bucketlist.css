@@ -1,7 +1,17 @@
-* {
-    border: 1px lightblue dashed;
+.bucketlist-controls {
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .bucketlist-title {
     font-weight: bold;
+}
+
+.add-bucketlist-item {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.bucketlist-item {
+    margin-bottom: 5px;
 }
