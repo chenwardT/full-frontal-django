@@ -18,14 +18,15 @@ from django.conf.urls import url
 from django.contrib import admin
 from rest_framework import routers
 
-from bucketlist.views import BucketListViewset, test
+from bucketlist.views import BucketListViewset, bucketlist_index, bucketlist_detail
 
 router = routers.DefaultRouter()
-router.register(r'bucketlists', BucketListViewset)
+router.register(r'api/bucketlists', BucketListViewset)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^test/', test),
+    url(r'^bucketlists/$', bucketlist_index),
+    url(r'^bucketlists/(?P<id>\d+)/$', bucketlist_detail)
 ]
 
 urlpatterns += router.urls
