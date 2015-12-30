@@ -12,7 +12,7 @@ module.exports = {
   entry: [
     'webpack-dev-server/client?http://' + INTERFACE + ':3000',
     'webpack/hot/only-dev-server',
-    './assets/js/index'
+    './bucketlist/assets/js/detail-entry'
   ],
 
   output: {

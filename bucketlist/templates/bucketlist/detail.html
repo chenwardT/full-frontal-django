@@ -1,0 +1,9 @@
+{% extends "base/base.html" %}
+{% load render_bundle from webpack_loader %}
+{% block content %}
+    <div class="container">
+        <div class="row" id="bucketlist-container">
+            {% render_bundle 'main' %}
+        </div>
+    </div>
+{% endblock %}
